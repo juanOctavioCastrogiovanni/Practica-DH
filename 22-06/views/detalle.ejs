@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('./head')%>
+
+<body>
+  <%-include('./header')%>
+    <div class="container blanco">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <img src="/images/<%= producto.image %>">
+            </div>
+            <div class="col-12 col-md-6 texto altura3">
+                <h1 class="nombre"><%= producto.name %></h1>
+                <% if(producto.discount!=0){ %>
+                <h4 class="precio-real">$<%= producto.price %></h2>
+                <h3 class="descuento"><%= producto.discount %>% OFF</h3>
+                <% } %>
+                <h2 class="precio">$<%= (producto.price)-(producto.price * producto.discount /100) %></h2>
+                <h4 class="descripcion"><%= producto.description %></h4> 
+                <form action="/detalle/<%=producto.id%>/editar" method="GET" class="botones"> 
+                    <button type="submit" class="btn btn-success fuente15 mr-2">Modificar</button>
+                </form>
+                <form action="/detalle/<%=producto.id%>/eliminar" method="GET" class="botones">
+                    <button type="submit" class="btn btn-danger fuente15 mr-2">Borrar</button>
+                </form>
+                <form action="/" method="GET" class="botones">
+                    <button type="submit" class="btn btn-info fuente15 mr-2">Volver</button>
+                </form>
+            </div>
+        
+
+        </div>
+    </div>
+   <%- include('./footer')%>
+
+
+</body>
+
+</html>

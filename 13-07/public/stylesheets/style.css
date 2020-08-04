@@ -1,0 +1,48 @@
+.blanco{
+  background-color: white;
+}
+
+.texto{
+  margin-top: 80px;
+}
+
+.altura5 {
+  height: 500px;
+}
+
+
+.altura3 {
+  height: 300px;
+}
+
+.descuento{
+  color: green;
+}
+
+.precio-real{
+  color: rgba(255,0,0, 0.5);
+  text-decoration: line-through;
+}
+
+.Mensaje{
+  font-size: 48px;
+  color: red;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.botones {
+  display: inline;
+}
+
+.fuente15 {
+  font-size: 1.5em;
+}
+
+.alert{
+  font-size: 2em;
+}
+
+.altura1{
+  margin-top: 50px;
+}

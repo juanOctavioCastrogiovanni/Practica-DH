@@ -1,0 +1,15 @@
+<%- include('partials/head')%>
+
+  <body>
+    
+    <h1>Lista de actores</h1>
+    <p>¿Cual desea borrar?</p>
+    <ul>
+      <% actores.forEach(actor => {%>
+        <li style="line-height: 40px;"><form action="/movies/<%=actor.id%>/borrar-el-actor?_method=DELETE" method="POST"><button type="submit"><%=actor.first_name%> <%=actor.last_name%></button></form></li>
+      <% }) %>
+    </ul>
+    
+    
+  </body>
+</html>

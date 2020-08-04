@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('./head')%>
+
+<body>
+  <%-include('./header')%>
+    <div class="container blanco">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <img src="/images/<%= producto.image %>">
+            </div>
+            <div class="col-12 col-md-6 texto altura5">
+                <h3 class="text-success">Edite su producto:</h3>
+                <form action="/detalle/<%=producto.id%>/editar?_method=PUT" method="POST">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Nombre del producto:</label>
+                      <input type="text" class="form-control" name="nombre" value="<%=producto.name%>" required>
+                      <small id="emailHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Descripcion:</label><br>
+                        <textarea id="w3review" name="descripcion" rows="4" cols="50"><%=producto.description%></textarea>
+                        <small id="emailHelp" class="form-text text-muted">complete si quiere el datelle</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Precio:</label>
+                        <input type="number" class="form-control" name="precio" value="<%=producto.price%>" required>
+                        <small id="emailHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Descuento:</label>
+                        <input type="number" class="form-control" name="descuento" value="<%=producto.discount%>" required>
+                        <small id="emailHelp" class="form-text text-muted"></small>
+                      </div>
+                      <div class="my-3">
+                        <label class="mr-sm-2 sr-only"></label>
+                        <select class="custom-select mr-sm-2" name="categoria">
+                          <%if (producto.category == 'visitas') {%>
+                            <option>visitas</option>
+                            <option value="ofertas">ofertas</option>
+                          <%} else {%>
+                            <option>ofertas</option>
+                            <option value="visitas">visitas</option>                          
+                          <%}%>
+                        </select>
+                    </div>
+                    <div>
+                    <button type="submit" class="btn btn-primary fuente15">Enviar</button>
+                  </form>
+                  <form action="/detalle/<%=producto.id%>" method="GET" class="botones">
+                    <button type="submit" class="btn btn-info fuente15  my-3">Volver</button>
+                  </form>
+            </div>
+        
+
+        </div>
+    </div>
+   <%- include('./footer')%>
+
+
+</body>
+
+</html>

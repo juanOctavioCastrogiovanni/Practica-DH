@@ -1,0 +1,44 @@
+<%- include('partials/head')%>
+
+  <body>
+    <form action="/movies/search" method="POST">
+    <input type="text" placeholder="Buscar..." name="search">
+    <button type="submit">Buscar</button>
+    </form>
+    <h1>Lista de peliculas</h1>
+    <p>Estas son las listas que se estan almacenadas en la base de datos movies-db.</p>
+    <ul>
+      <% movies.forEach(movie => {%>
+        <%if (movie.genreRelationship) {%>
+          <a href="/movies/<%=movie.id%>"><li><p><%=movie.title%> -> <%=movie.genreRelationship.name%></p></li>
+        <%} else {%>  
+          <a href="/movies/<%=movie.id%>"><li><p><%=movie.title%></p></li></a>
+        <%} %>
+      <% }) %>
+    </ul>
+    <%if (ultimas5){%>
+    <form action="/movies" method="GET" style="display: inline;">
+      <button>Atras</button>
+    </form>
+    <%} else {%>
+    <form action="/movies/new" method="GET" style="display: inline;">
+      <button>Ultimas 5!</button>
+    </form>
+    <%}%>
+    <%if (recommended){%>
+      
+      <%} else {%>
+        <form action="/movies/recommended" method="GET" style="display: inline;">
+          <button>Recomendadas!</button>
+        </form>
+      <%}%>
+      <form action="/movies/form" method="GET" style="display: inline;">
+        <button>Crear</button>
+      </form>
+      <form action="/movies/actualizar" method="GET" style="display: inline;">
+        <button>Actualizar</button>
+      </form>
+     
+    
+  </body>
+</html>

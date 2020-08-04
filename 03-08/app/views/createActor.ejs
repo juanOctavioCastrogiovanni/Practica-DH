@@ -1,0 +1,30 @@
+<%- include('partials/head')%>
+  <body>
+   <% if(urlAction=='creacion'){%>
+    <form action="/movies/form/complete" method="POST">
+    <%} else {%>
+    <form action="/movies/<%=id%>/creacion-actor" method="POST">
+    <%}%>  
+        <div class="container">
+          <h1>Agrega actores a la pelicula</h1>
+          <p>Crea nombres de actores y subela a la base con su pelicula</p>
+          
+      
+          <label><b>Nombre</b></label>
+          <input type="text" name="first_name" required>
+      
+          <label><b>Apellido</b></label>
+          <input type="text" name="last_name" required>
+
+          <label><b>Rating</b></label>
+          <input type="number" name="ratingActor" required>
+      
+          <button type="submit" class="registerbtn">Subir</button>
+        </div>
+      </form>
+      <form action="/movies/form" method="GET" style="display: inline;">
+        <button>Atras</button>
+      </form>
+  </body>
+
+</html>

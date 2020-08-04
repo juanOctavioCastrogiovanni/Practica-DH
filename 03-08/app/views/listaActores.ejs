@@ -1,0 +1,25 @@
+<%- include('partials/head')%>
+
+  <body>
+    
+    <h1>Lista de actores</h1>
+    <p>Estas son las listas que se estan almacenadas en la base de datos movies-db.</p>
+    <ul>
+      <% actores.forEach(actor => {%>
+        <li style="line-height: 40px;"><a href="/movies/<%=id_pelicula%>/<%=actor.id%>/agregar-a-pelicula"><%=actor.first_name%> <%=actor.last_name%></a></li>
+      <% }) %>
+    </ul>
+    <h3>¿Desea crear un actor y asociarlo a esta pelicula?</h3>
+    <form action="/movies/<%=id_pelicula%>/crear-actor" method="GET" style="display: inline;">
+        <button>Crear actor</button>
+      </form>
+      <form action="/movies/borrar-actor" method="GET" style="display: inline;">
+        <button>Borrar Actor</button>
+      </form>
+    
+    <form action="/movies" method="GET" style="display: inline;">
+        <button>Atras</button>
+      </form>
+    
+  </body>
+</html>

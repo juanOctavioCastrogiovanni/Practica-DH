@@ -1,0 +1,45 @@
+<header class="main-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-5 col-md-2">
+                <a href="/" class="main-header_home-link">
+                    <img src="/images/logo-mercado-liebre.svg">
+                </a>
+            </div>
+
+            <div class="col-7 col-md-6">
+                <form action="/search" method="GET" class="search-form">
+                    <input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
+                    <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <a href="#" class="main-header_credit-link">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    Comprá en cuotas y sin tarjeta de crédito
+                </a>
+            </div>
+        </div>
+
+        <button class="btn-toggle-navbar">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="main-navbar">
+            <ul class="left-navbar">
+                <li><a href="/">Por categorias</a></li>
+                <li><a href="/products">Todos los productos</a></li>
+                <li><a href="#">Vender</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+
+            <ul class="right-navbar">
+                <li><form action="/crear" method="GET" ><a href="/crear" >Crear producto <i class="far fa-address-card"></i></a></form></li>
+                <li><form action="/users/register" method="GET" ><a href="/users/register" >Ingresá<i class="fas fa-sign-in-alt"></i></a></form></li>
+                <li><form action="/admin" method="GET" ><a href="/admin" >Usuaro<i class="fas fa-user"></i></a></form></li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>

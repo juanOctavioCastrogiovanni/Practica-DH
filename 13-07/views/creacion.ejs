@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('./head')%>
+
+<body>
+  <%-include('./header')%>
+    <div class="container blanco">
+        <div class="row">
+            <div class="col-12 col-md-6 altura1">
+                <h3 class="text-success">Edite su producto:</h3>
+                <form action="/creado" method="POST">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nombre del producto:</label>
+                        <input type="text" class="form-control" name="nombre" required>
+                        <small id="emailHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Descripcion:</label><br>
+                        <textarea id="w3review" name="descripcion" rows="4" cols="50"></textarea>
+                        <small id="emailHelp" class="form-text text-muted">complete si quiere el datelle</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Precio:</label>
+                        <input type="number" class="form-control" name="precio" required>
+                        <small id="emailHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Descuento:</label>
+                        <input type="number" class="form-control" name="descuento" required>
+                        <small id="emailHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="my-3">
+                        <label class="mr-sm-2 sr-only"></label>
+                        <select class="custom-select mr-sm-2" name="categoria">
+                          <option >Categoria </option>
+                          <option value="visitas">visitas</option>
+                          <option value="ofertas">ofertas</option>
+                        </select>
+                      </div>
+                    <button type="submit" class="btn btn-primary fuente15">Crear</button>
+                </form>
+                <form action="/detalle/" method="GET" class="botones">
+                    <button type="submit" class="btn btn-info fuente15  my-3">Volver</button>
+                </form>
+            </div>
+            <div class="col-1 col-md-6">
+                <img src="/images/notebook.jpg">
+            </div>
+        </div>
+        
+    </div>
+   <%- include('./footer')%>
+
+
+</body>
+
+</html>

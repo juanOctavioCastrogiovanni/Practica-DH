@@ -1,0 +1,66 @@
+<%- include('partials/head')%>
+  <body>
+    <h1>Crear una pelicua</h1>
+    <p>Crea una pelicula y subela a la base de datos</p>
+    
+
+    
+    <p>¿Desesa agregar actores a esta pelicula?</p>
+    <form action="/movies/formActor" method="GET">
+      <button>Agregar Actor</button>
+    </form>
+    <form action="/movies/form" method="POST">
+        <div class="container">
+
+          <%if (prevActors.length != 0) {%>
+           <h3>Actores agregados</h3>
+           <ul>
+             <% prevActors.forEach(actor => {%>
+              <p> </p>
+              <li>Nombre: <%=actor.nameActor%></li>
+              <li>Apellido: <%=actor.lastName%></li>
+              <li>rating: <%=actor.rating%></li>
+             <%})%>
+             
+           </ul>
+          <%}%>
+            
+        
+          <label><b>Titulo</b></label>
+          <input type="text" name="title" required>
+      
+          <label><b>Premios</b></label>
+          <input type="number" name="awards" required>
+      
+          <label><b>Duración</b></label>
+          <input type="number" name="length" required>
+          
+
+          <label><b>Rating</b></label>
+          <input type="number" name="rating" required>
+        
+
+          <label><b>Fecha de lanzamiento</b></label>
+          <input type="date" name="release_date" required>
+
+          
+
+          <select name="genre_id">
+              <% genres.forEach(genre => { %>
+                <option value="<%=genre.id%>"><%=genre.name%></option>
+              <%})%>
+
+
+          </select>
+      
+          
+          <button type="submit" class="registerbtn">Crear</button>
+        </div>
+      </form>
+      
+      <form action="/movies" method="GET" style="display: inline;">
+        <button>Atras</button>
+      </form>
+  </body>
+
+</html>

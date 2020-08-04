@@ -1,0 +1,32 @@
+<%- include('partials/head')%>
+  <body>
+    <h1><%=movie.title%></h1>
+    <h2>Rating <%=movie.rating%></h2>
+    
+        <%if (movie.genreRelationship) {%>
+          <h2>Genero: <%=movie.genreRelationship.name%>.<h3>
+        <%} else {%>  
+            <h2>Genero: no posee.
+        <%}%>        
+    <h2>Preimios: <%=movie.awards%></h2>
+    <h2>Actores:</h2>
+    <ul>
+      <%movie.actors.forEach(actor => {%>
+        <li><%=actor.first_name%> <%=actor.last_name%></li>
+      <%})%>
+    </ul>
+    <h2>Fecha de estreno: <%=movie.release_date%></h2>
+    <h2>Duracion: <%=movie.length%></h2>
+    <form action="/movies" method="GET" style="display: inline;">
+        <button>Atras</button>
+      </form>
+    <form action="/movies/<%=movie.id%>/form" method="GET" style="display: inline;">
+      <button>Editar</button>
+    </form>
+    <form action="/movies/<%=movie.id%>?_method=DELETE" method="POST" style="display: inline;">
+      <button>Borrar</button>
+    </form>
+
+    </body>
+
+</html>

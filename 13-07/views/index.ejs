@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./head')%>
+<body>
+<!---->	<%- include('./header')%>
+	
+	<!-- Banner -->
+	<div class="banner"></div>
+	<!-- /Banner -->
+
+	<!-- ultima visita -->
+	
+	<%- include('./tarjetas',{condicion:'visitas', titulo: 'Basado en tu última visita'})%>
+	<%- include('./tarjetas',{condicion:'ofertas', titulo: 'Ofertas'})%>			
+
+	<!-- footer -->
+	<%- include('./footer')%>
+</body>
+</html>

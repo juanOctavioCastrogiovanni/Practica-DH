@@ -1,0 +1,21 @@
+<%- include('partials/head')%>
+
+  <body>
+    <form action="/movies/search" method="POST">
+    <input type="text" placeholder="Buscar..." name="search">
+    <button type="submit">Buscar</button>
+    </form>
+    <h1>Estos son los actores que trabajaron en la pelicula "<%=movie.title%>"</h1>
+    <h2>Estas son las listas que se estan almacenadas en la base de datos movies-db.</h2>
+    <ul>
+        <%movie.actors.forEach(actor => {%>
+            <li><h3><%=actor.first_name%> <%=actor.last_name%> <form action="/movies/<%=movie.id%>/<%=actor.id%>?_method=DELETE" method="POST"><button type="submit"> borrar actor</button></form></h3></li>
+          <%})%>
+            <li><h3><form action="/movies/<%=movie.id%>/actores-para-agregar" method="GET"><button>Agregar actor</button></form></h3></li>
+    </ul>
+    <form action="/movies/<%=movie.id%>/form" method="GET" style="display: inline;">
+        <button>Atras</button>
+      </form>
+    
+  </body>
+</html>
